@@ -29,6 +29,7 @@ export default function NavBar() {
         setAnchorElNav(null);
     };
 
+    // below code is for toggling light/dark mode
     const [checked, setChecked] = useState(true);
 
     const { mode, setMode } = useColorScheme();
@@ -36,6 +37,7 @@ export default function NavBar() {
         return null;
     }
 
+    // if switch is checked, set dark mode, unchecked, set light mode
     const handleThemeToggle = (event) => {
         setMode(event.target.checked ? 'dark' : 'light');
         setChecked(event.target.checked);
