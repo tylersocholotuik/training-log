@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Workout {
+  id Int @id @default(autoincrement())
+  title String
+  notes String?
+  date DateTime @default(now())
+  exercises WorkoutExercise[] 
+}
+
+model Exercise {
+  id Int @id @default(autoincrement())
+  name String @unique
+  workoutExercises WorkoutExercise[]
+}
+
+model WorkoutExercise {
+  id Int @id @default(autoincrement())
+  notes String?
+  weightUnit String
+  exerciseId Int
+  workoutId Int
+  exercise Exercise @relation(fields: [exerciseId], references: [id])
+  workout Workout @relation(fields: [workoutId], references: [id])
+  sets Set[] 
+}
+
+model Set {
+  id Int @id @default(autoincrement())
+  weight Decimal?
+  reps Int?
+  rpe Decimal?
+  exerciseId Int
+  exercise WorkoutExercise @relation(fields: [exerciseId], references: [id])
+}
