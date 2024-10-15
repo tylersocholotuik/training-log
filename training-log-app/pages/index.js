@@ -1,15 +1,8 @@
 import Head from "next/head";
-import { useColorScheme } from "@mui/material";
 
 import NavBar from "@/components/NavBar";
-import Typography from "@mui/material/Typography";
 
 export default function Home() {
-  // const { mode, setMode } = useColorScheme();
-  // if (!mode) {
-  //   return null;
-  // }
-
   return (
     <>
       <Head>
@@ -22,7 +15,7 @@ export default function Home() {
         <NavBar />
       </header>
       <main>
-        
+
       </main>
     </>
   );
