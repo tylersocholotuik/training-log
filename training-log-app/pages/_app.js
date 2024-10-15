@@ -7,7 +7,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 // theme
-import { ThemeProvider } from "@emotion/react";
+import { ThemeProvider } from "@mui/material";
 import { theme } from "@/utils/theme/theme";
 
 export default function App({ Component, pageProps }) {

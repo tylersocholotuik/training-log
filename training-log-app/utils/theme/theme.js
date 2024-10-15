@@ -16,9 +16,6 @@ const theme = createTheme({
             },
         },
     }, 
-    typography: {
-        fontSize: 8
-    }
 });
 
 export { theme };
