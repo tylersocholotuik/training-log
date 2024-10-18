@@ -15,6 +15,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Switch from '@mui/material/Switch';
 import Tooltip from '@mui/material/Tooltip';
 import { useColorScheme } from "@mui/material";
+import { useRouter } from 'next/router';
 
 export default function NavBar() {
     const pages = ['Workout', 'History', 'Exercises', 'Templates'];
@@ -43,6 +44,8 @@ export default function NavBar() {
         setChecked(event.target.checked);
     }
 
+    const router = useRouter();
+
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
@@ -52,7 +55,7 @@ export default function NavBar() {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -93,8 +96,14 @@ export default function NavBar() {
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                                <MenuItem key={page} onClick={() => {
+                                    handleCloseNavMenu();
+                                    // navigates to corresponding page
+                                    router.push(`/${page.toLowerCase()}`);
+                                }}>
+                                    <Typography sx={{ textAlign: 'center' }}>
+                                        {page}
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -104,7 +113,7 @@ export default function NavBar() {
                         variant="h5"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -121,7 +130,10 @@ export default function NavBar() {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
+                                onClick={() => {
+                                    handleCloseNavMenu();
+                                    router.push(`/${page.toLowerCase()}`);
+                                }}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
                                 {page}
