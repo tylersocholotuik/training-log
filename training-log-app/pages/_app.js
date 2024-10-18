@@ -10,10 +10,15 @@ import '@fontsource/roboto/700.css';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { theme } from "@/utils/theme/theme";
 
+import NavBar from "@/components/NavBar";
+
 export default function App({ Component, pageProps }) {
-  return <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Component {...pageProps} />
-       </ThemeProvider>
-   ;
+   return <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <header>
+         <NavBar />
+      </header>
+      <Component {...pageProps} />
+   </ThemeProvider>
+      ;
 }
