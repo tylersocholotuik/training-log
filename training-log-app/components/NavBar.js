@@ -15,10 +15,17 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Switch from '@mui/material/Switch';
 import Tooltip from '@mui/material/Tooltip';
 import { useColorScheme } from "@mui/material";
-import { useRouter } from 'next/router';
+import { NavLink } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 export default function NavBar() {
-    const pages = ['Workout', 'History', 'Exercises', 'Templates'];
+    const pages = [
+        { path: '/workout', label: 'Workout' },
+        { path: '/history', label: 'History' },
+        { path: '/exercises', label: 'Exercises' },
+        { path: '/templates', label: 'Templates' }
+    ];
 
     const [anchorElNav, setAnchorElNav] = useState(null);
 
@@ -43,8 +50,6 @@ export default function NavBar() {
         setMode(event.target.checked ? 'dark' : 'light');
         setChecked(event.target.checked);
     }
-
-    const router = useRouter();
 
     return (
         <AppBar position="static">
@@ -96,15 +101,24 @@ export default function NavBar() {
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={() => {
-                                    handleCloseNavMenu();
-                                    // navigates to corresponding page
-                                    router.push(`/${page.toLowerCase()}`);
-                                }}>
-                                    <Typography sx={{ textAlign: 'center' }}>
-                                        {page}
-                                    </Typography>
-                                </MenuItem>
+                                // using the NavLink component for page navigation
+                                <Router>
+                                    <MenuItem
+                                        key={page.label}
+                                        onClick={handleCloseNavMenu}
+                                        component={NavLink}
+                                        to={page.path}
+                                        sx={{
+                                            '&.active': {
+                                                color: 'primary.main'
+                                            }
+                                        }}
+                                    >
+                                        <Typography sx={{ textAlign: 'center' }}>
+                                            {page.label}
+                                        </Typography>
+                                    </MenuItem>
+                                </Router>
                             ))}
                         </Menu>
                     </Box>
@@ -127,18 +141,37 @@ export default function NavBar() {
                         Training Log
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={() => {
-                                    handleCloseNavMenu();
-                                    router.push(`/${page.toLowerCase()}`);
-                                }}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                        {pages.map((page) => {
+                            return (
+                                // these buttons need to be wrapped in a router
+                                // component when using NavLink
+                                // using NavLink because it automatically applies
+                                // the active class, allowing me to style the button's
+                                // active state
+                                <Router>
+                                    <Button
+                                        key={page}
+                                        onClick={handleCloseNavMenu}
+                                        component={NavLink}
+                                        to={page.path}
+                                        sx={{
+                                            my: 2,
+                                            display: 'block',
+                                            color: '#bdbdbd',
+                                            '&:hover': {
+                                                color: 'white',
+                                                backgroundColor: 'transparent'
+                                            },
+                                            '&.active': {
+                                                color: 'white'
+                                            }
+                                        }}
+                                    >
+                                        {page.label}
+                                    </Button>
+                                </Router>
+                            )
+                        })}
                     </Box>
                     <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
                         <LightModeIcon />
