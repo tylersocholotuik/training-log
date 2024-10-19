@@ -15,8 +15,9 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Switch from '@mui/material/Switch';
 import Tooltip from '@mui/material/Tooltip';
 import { useColorScheme } from "@mui/material";
-import { NavLink } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useTheme } from '@mui/material';
 
 
 export default function NavBar() {
@@ -51,6 +52,14 @@ export default function NavBar() {
         setChecked(event.target.checked);
     }
 
+    const router = useRouter();
+
+    const theme = useTheme();
+
+    // checking the color scheme to determine hover/active states
+    // for nav links
+    let isDarkMode = theme.palette.mode === 'dark';
+
     return (
         <AppBar position="static">
             <Container maxWidth="xl">
@@ -59,7 +68,7 @@ export default function NavBar() {
                     <Typography
                         variant="h6"
                         noWrap
-                        component="a"
+                        component={Link}
                         href="/"
                         sx={{
                             mr: 2,
@@ -100,33 +109,34 @@ export default function NavBar() {
                             onClose={handleCloseNavMenu}
                             sx={{ display: { xs: 'block', md: 'none' } }}
                         >
-                            {pages.map((page) => (
-                                // using the NavLink component for page navigation
-                                <Router>
+                            {pages.map((page) => {
+                                // returns true if the page path matches the router path
+                                // this mimics the 'active' class on navlinks
+                                const isActive = router.pathname === page.path;
+
+                                return (
                                     <MenuItem
-                                        key={page.label}
-                                        onClick={handleCloseNavMenu}
-                                        component={NavLink}
-                                        to={page.path}
-                                        sx={{
-                                            '&.active': {
-                                                color: 'primary.main'
-                                            }
-                                        }}
-                                    >
-                                        <Typography sx={{ textAlign: 'center' }}>
-                                            {page.label}
-                                        </Typography>
-                                    </MenuItem>
-                                </Router>
-                            ))}
+                                    key={page.label}
+                                    onClick={handleCloseNavMenu}
+                                    component={Link}
+                                    href={page.path}
+                                    sx={{
+                                        color: isActive ? 'primary.main' : 'inherit'                                        
+                                    }}
+                                >
+                                    <Typography sx={{ textAlign: 'center' }}>
+                                        {page.label}
+                                    </Typography>
+                                </MenuItem>
+                                ) 
+                            })}
                         </Menu>
                     </Box>
                     <FitnessCenterIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
                         noWrap
-                        component="a"
+                        component={Link}
                         href="/"
                         sx={{
                             mr: 2,
@@ -142,34 +152,35 @@ export default function NavBar() {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => {
+                            
+                            const isActive = router.pathname === page.path
+
                             return (
-                                // these buttons need to be wrapped in a router
-                                // component when using NavLink
-                                // using NavLink because it automatically applies
-                                // the active class, allowing me to style the button's
-                                // active state
-                                <Router>
-                                    <Button
-                                        key={page}
-                                        onClick={handleCloseNavMenu}
-                                        component={NavLink}
-                                        to={page.path}
-                                        sx={{
-                                            my: 2,
-                                            display: 'block',
-                                            color: '#bdbdbd',
+                                <Button
+                                    key={page}
+                                    onClick={handleCloseNavMenu}
+                                    component={Link}
+                                    href={page.path}
+                                    sx={{
+                                        my: 2,
+                                        display: 'block',
+                                        // changing active link colors based on 
+                                        // color scheme
+                                        color: isDarkMode ? isActive ?
+                                            'primary.light' : '#bdbdbd'
+                                            : !isDarkMode ? isActive ?
+                                            '#ff6f61' : '#e0e0e0' 
+                                            : '#bdbdbd',           
                                             '&:hover': {
-                                                color: 'white',
+                                                color: isDarkMode ? 'primary.light' : '#ff6f61',
                                                 backgroundColor: 'transparent'
-                                            },
-                                            '&.active': {
-                                                color: 'white'
-                                            }
-                                        }}
-                                    >
-                                        {page.label}
-                                    </Button>
-                                </Router>
+                                        }
+                                    }}
+                                >
+                                    {page.label}
+                                </Button>
+
+
                             )
                         })}
                     </Box>
