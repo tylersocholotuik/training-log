@@ -18,13 +18,15 @@ model Workout {
   title String
   notes String?
   date DateTime @default(now())
-  exercises WorkoutExercise[] 
+  exercises WorkoutExercise[]
+  deleted Boolean 
 }
 
 model Exercise {
   id Int @id @default(autoincrement())
   name String @unique
   workoutExercises WorkoutExercise[]
+  deleted Boolean
 }
 
 model WorkoutExercise {
@@ -40,9 +42,9 @@ model WorkoutExercise {
 
 model Set {
   id Int @id @default(autoincrement())
-  weight Decimal?
+  weight Float?
   reps Int?
-  rpe Decimal?
+  rpe Float?
   exerciseId Int
   exercise WorkoutExercise @relation(fields: [exerciseId], references: [id])
 }
