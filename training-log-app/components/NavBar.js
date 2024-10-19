@@ -121,7 +121,7 @@ export default function NavBar() {
                                     component={Link}
                                     href={page.path}
                                     sx={{
-                                        color: isActive ? 'primary.main' : 'inherit'                                        
+                                        color: isActive ? 'primary.light' : 'inherit'                                        
                                     }}
                                 >
                                     <Typography sx={{ textAlign: 'center' }}>
@@ -171,10 +171,11 @@ export default function NavBar() {
                                             : !isDarkMode ? isActive ?
                                             '#ff6f61' : '#e0e0e0' 
                                             : '#bdbdbd',           
-                                            '&:hover': {
-                                                color: isDarkMode ? 'primary.light' : '#ff6f61',
-                                                backgroundColor: 'transparent'
-                                        }
+                                        '&:hover': {
+                                            color: isDarkMode ? 'primary.light' : '#ff6f61',
+                                            backgroundColor: 'transparent'
+                                        },
+                                        scale: isActive ? 1.1 : 1
                                     }}
                                 >
                                     {page.label}
@@ -185,7 +186,7 @@ export default function NavBar() {
                         })}
                     </Box>
                     <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-                        <LightModeIcon />
+                        <LightModeIcon fontSize="small" />
                         <Tooltip title="Toggle light/dark mode">
                             <Switch
                                 checked={checked}
@@ -193,7 +194,7 @@ export default function NavBar() {
                                 inputProps={{ 'aria-label': 'theme switch' }}
                             />
                         </Tooltip>
-                        <DarkModeIcon />
+                        <DarkModeIcon fontSize="small" />
                     </Box>
                 </Toolbar>
             </Container>
