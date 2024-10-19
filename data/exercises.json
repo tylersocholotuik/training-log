@@ -1,0 +1,574 @@
+{
+    "exercises": [
+        {
+            "name": "Ab Wheel"
+        },
+        {
+            "name": "Back Extension"
+        },
+        {
+            "name": "Belt Squat"
+        },
+        {
+            "name": "Bench Press"
+        },
+        {
+            "name": "Bench Press (Paused)"
+        },
+        {
+            "name": "Bench Press (Close Grip)"
+        },
+        {
+            "name": "Bench Press (Decline)"
+        },
+        {
+            "name": "Bench Press (Decline, Dumbbell)"
+        },
+        {
+            "name": "Bench Press (Dumbbell)"
+        },
+        {
+            "name": "Bench Press (Feet Up)"
+        },
+        {
+            "name": "Bench Press (Incline)"
+        },
+        {
+            "name": "Bench Press (Incline, Dumbell)"
+        },
+        {
+            "name": "Bench Press (Smith Machine)"
+        },
+        {
+            "name": "Bench Press (Smith Machine, Incline)"
+        },
+        {
+            "name": "Biceps Curl"
+        },
+        {
+            "name": "Biceps Curl (Barbell)"
+        },
+        {
+            "name": "Biceps Curl (Bayesian)"
+        },
+        {
+            "name": "Biceps Curl (Cable)"
+        },
+        {
+            "name": "Biceps Curl (Dumbbell)"
+        },
+        {
+            "name": "Biceps Curl (EZ Bar)"
+        },
+        {
+            "name": "Biceps Curl (Machine)"
+        },
+        {
+            "name": "Biceps Curl (Preacher)"
+        },
+        {
+            "name": "Biceps Curl (Reverse Grip)"
+        },
+        {
+            "name": "Box Squat"
+        },
+        {
+            "name": "Box Step-Up"
+        },
+        {
+            "name": "Bulgarian Split Squat (Barbell)"
+        },
+        {
+            "name": "Bulgarian Split Squat (Dumbbell)"
+        },
+        {
+            "name": "Bulgarian Split Squat (Safety Bar)"
+        },
+        {
+            "name": "Bulgarian Split Squat (Smith Machine)"
+        },
+        {
+            "name": "Calf Raise (Dumbbell)"
+        },
+        {
+            "name": "Calf Raise (Leg Press)"
+        },
+        {
+            "name": "Calf Raise (Machine)"
+        },
+        {
+            "name": "Calf Raise (Seated)"
+        },
+        {
+            "name": "Calf Raise (Single-Leg)"
+        },
+        {
+            "name": "Calf Raise (Smith Machine)"
+        },
+        {
+            "name": "Chest Fly (Cable)"
+        },
+        {
+            "name": "Chest Fly (Cable, High-to-Low)"
+        },
+        {
+            "name": "Chest Fly (Cable, Low-to-High)"
+        },
+        {
+            "name": "Chest Fly (Dumbbell)"
+        },
+        {
+            "name": "Chest Fly (Dumbbell, Incline)"
+        },
+        {
+            "name": "Chest Fly (Dumbbell, Decline)"
+        },
+        {
+            "name": "Chin-Up"
+        },
+        {
+            "name": "Crunch"
+        },
+        {
+            "name": "Crunch (Cable)"
+        },
+        {
+            "name": "Crunch (Machine)"
+        },
+        {
+            "name": "Deadlift"
+        },
+        {
+            "name": "Deadlift (Deficit)"
+        },
+        {
+            "name": "Deadlift (Paused)"
+        },
+        {
+            "name": "Deadlift (Stiff-Legged)"
+        },
+        {
+            "name": "Deadlift (Sumo)"
+        },
+        {
+            "name": "Deadlift (Trap Bar)"
+        },
+        {
+            "name": "Dips"
+        },
+        {
+            "name": "Dips (Ring)"
+        },
+        {
+            "name": "Face Pulll"
+        },
+        {
+            "name": "Floor Press"
+        },
+        {
+            "name": "French Press"
+        },
+        {
+            "name": "Front Raise (Cable)"
+        },
+        {
+            "name": "Front Raise (Dumbbell)"
+        },
+        {
+            "name": "Front Squat"
+        },
+        {
+            "name": "Front Squat (Paused)"
+        },
+        {
+            "name": "Glute Ham Raise"
+        },
+        {
+            "name": "Glute Kickback (Cable)"
+        },
+        {
+            "name": "Goblet Squat"
+        },
+        {
+            "name": "Good Morning (Barbell)"
+        },
+        {
+            "name": "Good Morning (Safety Bar)"
+        },
+        {
+            "name": "Good Morning (Smith Machine)"
+        },
+        {
+            "name": "Hack Squat"
+        },
+        {
+            "name": "Hack Squat (Paused)"
+        },
+        {
+            "name": "Hammer Curl (Dumbbell)"
+        },
+        {
+            "name": "Hammer Curl (Cable)"
+        },
+        {
+            "name": "Hamstring Curl (Lying)"
+        },
+        {
+            "name": "Hamstring Curl (Seated)"
+        },
+        {
+            "name": "Hamstring Curl (Single-Leg)"
+        },
+        {
+            "name": "Hip Thrust (Barbell)"
+        },
+        {
+            "name": "Hip Thrust (Machine)"
+        },
+        {
+            "name": "Hip Thrust (Single-Leg)"
+        },
+        {
+            "name": "Inverted Row"
+        },
+        {
+            "name": "JM Press (Barbell)"
+        },
+        {
+            "name": "JM Press (Smith Machine)"
+        },
+        {
+            "name": "Knee Raise (Hanging)"
+        },
+        {
+            "name": "Knee Raise (Roman Chair)"
+        },
+        {
+            "name": "Lat Prayer"
+        },
+        {
+            "name": "Lat Pulldown (Narrow Grip)"
+        },
+        {
+            "name": "Lat Pulldown (Neutral Grip)"
+        },
+        {
+            "name": "Lat Pulldown (Single-Arm)"
+        },
+        {
+            "name": "Lat Pulldown (Underhand Grip)"
+        },
+        {
+            "name": "Lat Pulldown (Wide Grip)"
+        },
+        {
+            "name": "Lateral Raise (Cable)"
+        },
+        {
+            "name": "Lateral Raise (Dumbbell)"
+        },
+        {
+            "name": "Lateral Raise (Machine)"
+        },
+        {
+            "name": "Leg Extension"
+        },
+        {
+            "name": "Leg Extension (Single-Leg)"
+        },
+        {
+            "name": "Leg Press"
+        },
+        {
+            "name": "Leg Press (Paused)"
+        },
+        {
+            "name": "Leg Press (Single-Leg)"
+        },
+        {
+            "name": "Leg Raise (Hanging)"
+        },
+        {
+            "name": "Leg Raise (Lying)"
+        },
+        {
+            "name": "Leg Raise (Roman Chair)"
+        },
+        {
+            "name": "Lunge (Dumbbell)"
+        },
+        {
+            "name": "Lunge (Barbell)"
+        },
+        {
+            "name": "Lunge (Reverse)"
+        },
+        {
+            "name": "Lunge (Safety Bar)"
+        },
+        {
+            "name": "Lunge (Walking)"
+        },
+        {
+            "name": "Muscle-Up"
+        },
+        {
+            "name": "Nordic Hamstring Curl"
+        },
+        {
+            "name": "Overhead Press (Barbell, Paused)"
+        },
+        {
+            "name": "Overhead Press (Barbell, Seated)"
+        },
+        {
+            "name": "Overhead Press (Barbell, Standing)"
+        },
+        {
+            "name": "Overhead Press (Behind-the-Neck)"
+        },
+        {
+            "name": "Overhead Press (Dumbell, Paused)"
+        },
+        {
+            "name": "Overhead Press (Dumbell, Seated)"
+        },
+        {
+            "name": "Overhead Press (Dumbell, Standing)"
+        },
+        {
+            "name": "Pendlay Row"
+        },
+        {
+            "name": "Pendulum Squat"
+        },
+        {
+            "name": "Pin Bench Press"
+        },
+        {
+            "name": "Pin Press"
+        },
+        {
+            "name": "Pin Squat"
+        },
+        {
+            "name": "Pull-Up"
+        },
+        {
+            "name": "Pull-Up (Narrow Grip)"
+        },
+        {
+            "name": "Pull-Up (Neutral Grip)"
+        },
+        {
+            "name": "Pull-Up (Wide Grip)"
+        },
+        {
+            "name": "Pullover (Dumbbell)"
+        },
+        {
+            "name": "Pullover (EZ Bar)"
+        },
+        {
+            "name": "Pullover (Machine)"
+        },
+        {
+            "name": "Push Press"
+        },
+        {
+            "name": "Push-Up"
+        },
+        {
+            "name": "Push-Up (Banded)"
+        },
+        {
+            "name": "Push-Up (Decline)"
+        },
+        {
+            "name": "Push-Up (Deficit)"
+        },
+        {
+            "name": "Push-Up (Ring)"
+        },
+        {
+            "name": "Push-Up (Weighted)"
+        },
+        {
+            "name": "Rack Pull"
+        },
+        {
+            "name": "Razor Curl"
+        },
+        {
+            "name": "Reverse Nordic Curl"
+        },
+        {
+            "name": "Reverse Fly (Cable)"
+        },
+        {
+            "name": "Reverse Fly (Dumbbell)"
+        },
+        {
+            "name": "Reverse Fly (Machine)"
+        },
+        {
+            "name": "Romanian Deadlift (Barbell)"
+        },
+        {
+            "name": "Romanian Deadlift (Dumbbell)"
+        },
+        {
+            "name": "Romanian Deadlift (Paused)"
+        },
+        {
+            "name": "Romanian Deadlift (Single-Leg)"
+        },
+        {
+            "name": "Romanian Deadlift (Smith Machine)"
+        },
+        {
+            "name": "Row (Barbell)"
+        },
+        {
+            "name": "Row (Cable)"
+        },
+        {
+            "name": "Row (Cable, Single-Arm)"
+        },
+        {
+            "name": "Row (Dumbbell)"
+        },
+        {
+            "name": "Row (Dumbbell, Single-Arm)"
+        },
+        {
+            "name": "Row (Dumbbell, Chest-Supported)"
+        },
+        {
+            "name": "Row (Dumbbell)"
+        },
+        {
+            "name": "Row (Helms)"
+        },
+        {
+            "name": "Row (Machine)"
+        },
+        {
+            "name": "Row (Pendlay)"
+        },
+        {
+            "name": "Row (Seal)"
+        },
+        {
+            "name": "Row (T-Bar)"
+        },
+        {
+            "name": "Row (T-Bar, Chest-Supported)"
+        },
+        {
+            "name": "Row (Upright, Barbell)"
+        },
+        {
+            "name": "Row (Upright, Cable)"
+        },
+        {
+            "name": "Row (Upright, Dumbbell)"
+        },
+        {
+            "name": "Row (Upright, EZ Bar)"
+        },
+        {
+            "name": "Russian Twist"
+        },
+        {
+            "name": "Shrug (Barbell)"
+        },
+        {
+            "name": "Shrug (Cable)"
+        },
+        {
+            "name": "Shrug (Dumbbell)"
+        },
+        {
+            "name": "Shrug (Dumbbell, Seated)"
+        },
+        {
+            "name": "Shrug (Power)"
+        },
+        {
+            "name": "Shrug (Trap Bar)"
+        },
+        {
+            "name": "Sit-Up"
+        },
+        {
+            "name": "Sit-Up (Decline)"
+        },
+        {
+            "name": "Split Squat (Barbell)"
+        },
+        {
+            "name": "Split Squat (Dumbbell)"
+        },
+        {
+            "name": "Split Squat (Front Foot Elevated)"
+        },
+        {
+            "name": "Split Squat (Safety Bar)"
+        },
+        {
+            "name": "Squat (High Bar)"
+        },
+        {
+            "name": "Squat (Low Bar)"
+        },
+        {
+            "name": "Squat (Paused)"
+        },
+        {
+            "name": "Squat (Safety Bar)"
+        },
+        {
+            "name": "Squat (Smith Machine)"
+        },
+        {
+            "name": "Step-Up"
+        },
+        {
+            "name": "Triceps Extension (Cable, Overhead)"
+        },
+        {
+            "name": "Triceps Extension (Cable, Overhead, Single-Arm)"
+        },
+        {
+            "name": "Triceps Extension (Dumbbell, Lying)"
+        },
+        {
+            "name": "Triceps Extension (Dumbbell, Overhead)"
+        },
+        {
+            "name": "Triceps Extension (EZ Bar, Lying)"
+        },
+        {
+            "name": "Triceps Extension (EZ Bar, Overhead)"
+        },
+        {
+            "name": "Triceps Extension (Machine)"
+        },
+        {
+            "name": "Triceps Pushdown"
+        },
+        {
+            "name": "Triceps Pushdown (Single-Arm)"
+        },
+        {
+            "name": "V-Situp"
+        },
+        {
+            "name": "Wrist Curl"
+        },
+        {
+            "name": "Wrist Extension"
+        }
+    ]
+}

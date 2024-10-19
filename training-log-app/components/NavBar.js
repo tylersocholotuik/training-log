@@ -74,7 +74,6 @@ export default function NavBar() {
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontWeight: 700,
-                            letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
                         }}
@@ -143,7 +142,6 @@ export default function NavBar() {
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
                             fontWeight: 700,
-                            letterSpacing: '.3rem',
                             color: 'inherit',
                             textDecoration: 'none',
                         }}
