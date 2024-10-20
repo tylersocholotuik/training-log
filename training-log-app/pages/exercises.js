@@ -6,6 +6,8 @@ import Autocomplete from '@mui/material/Autocomplete';
 export default function Exercises() {
 
   const [data, setData] = useState(null);
+  const [exerciseValue, setExerciseValue] = useState(null);
+  const [exerciseSelection, setExceriseSelection] = useState('');
 
   useEffect(() => {
     // Fetch the data from the public folder
@@ -31,12 +33,22 @@ export default function Exercises() {
     <>
       <main>
         <Autocomplete
+          value={exerciseValue}
+          onChange={(event, newValue) => {
+            setExerciseValue(newValue);
+          }}
+          inputValue={exerciseSelection}
+          onInputChange={(event, newInputValue) => {
+            setExceriseSelection(newInputValue);
+          }} 
           options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
           groupBy={(exercise) => exercise.firstLetter}
           getOptionLabel={(exercise) => exercise.name}
           sx={{ width: 300 }}
           renderInput={(params) => <TextField {...params} label="Select Exercise" />}
         />
+        <div>{`exerciseValue: ${exerciseValue !== null ? `${exerciseValue.name}` : 'null'}`}</div>
+        <div>{`Selected: ${exerciseSelection}`}</div>
       </main>
     </>
   );
