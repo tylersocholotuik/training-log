@@ -3,25 +3,30 @@ import { useEffect, useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 
+import { getAllExercises } from '@/db-services/exerciseServices';
+
 export default function Exercises() {
 
-  const [data, setData] = useState(null);
+  const [exerciseData, setExerciseData] = useState(null);
   const [exerciseValue, setExerciseValue] = useState(null);
   const [exerciseSelection, setExceriseSelection] = useState('');
 
+  const fetchExercises = async () => {
+    const response = await fetch('/api/exercises/getExercises');
+    const exercises = await response.json();
+    setExerciseData(exercises);
+  };
+
+  // Fetch exercises when the component mounts
   useEffect(() => {
-    // Fetch the data from the public folder
-    fetch('/data/exercises.json')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error('Error fetching the data:', error));
+    fetchExercises();
   }, []);
 
-  if (!data) {
-    return <div>Loading...</div>;
+  if (!exerciseData) {
+    return <div>...Loading</div>
   }
 
-  const options = data.exercises.map((exercise) => {
+  const options = exerciseData.map((exercise) => {
     const firstLetter = exercise.name[0].toUpperCase();
     return {
       firstLetter: /[0-9]/.test(firstLetter) ? '0-9' : firstLetter,
