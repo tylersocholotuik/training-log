@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-
-import { getAllExercises } from '@/db-services/exerciseServices';
+import { DataGrid } from '@mui/x-data-grid';
 
 export default function Exercises() {
 
-  const [exerciseData, setExerciseData] = useState(null);
+  const [exerciseData, setExerciseData] = useState([]);
   const [exerciseValue, setExerciseValue] = useState(null);
   const [exerciseSelection, setExceriseSelection] = useState('');
+  const [rowSelectionModel, setRowSelectionModel] = useState([]);
 
   const fetchExercises = async () => {
     const response = await fetch('/api/exercises/getExercises');
@@ -26,34 +27,45 @@ export default function Exercises() {
     return <div>...Loading</div>
   }
 
-  const options = exerciseData.map((exercise) => {
-    const firstLetter = exercise.name[0].toUpperCase();
-    return {
-      firstLetter: /[0-9]/.test(firstLetter) ? '0-9' : firstLetter,
-      ...exercise,
-    };
-  });
+  const columns = [
+    { 
+      field: 'id', 
+      headerName: 'ID', 
+      width: 90 
+    },
+    {
+      field: 'name',
+      headerName: 'Name',
+      width: 150,
+      editable: true,
+    }
+  ];
 
   return (
     <>
       <main>
-        <Autocomplete
-          value={exerciseValue}
-          onChange={(event, newValue) => {
-            setExerciseValue(newValue);
-          }}
-          inputValue={exerciseSelection}
-          onInputChange={(event, newInputValue) => {
-            setExceriseSelection(newInputValue);
-          }} 
-          options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
-          groupBy={(exercise) => exercise.firstLetter}
-          getOptionLabel={(exercise) => exercise.name}
-          sx={{ width: 300 }}
-          renderInput={(params) => <TextField {...params} label="Select Exercise" />}
-        />
-        <div>{`exerciseValue: ${exerciseValue !== null ? `${exerciseValue.name}` : 'null'}`}</div>
-        <div>{`Selected: ${exerciseSelection}`}</div>
+        <Container spacing={4} sx={{ p: 4 }}>
+          <Box sx={{ height: '100vh', width: '100%' }}>
+            <DataGrid
+              rows={exerciseData}
+              columns={columns}
+              // initialState={{
+              //   pagination: {
+              //     paginationModel: {
+              //       pageSize: 20,
+              //     },
+              //   },
+              // }}
+              // pageSizeOptions={[20]}
+              disableMultipleRowSelection={true}
+              onRowSelectionModelChange={(newRowSelectionModel) => {
+                setRowSelectionModel(newRowSelectionModel);
+              }}
+              rowSelectionModel={rowSelectionModel}
+            />
+          </Box>
+        </Container>
+
       </main>
     </>
   );
